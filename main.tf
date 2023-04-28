@@ -1,5 +1,5 @@
 ########## creating a PUBLIC bucket for cloudtrail ##########
-resource "aws_s3_bucket" "cloudtrail_logs_bucket" {
+resource "aws_s3_bucket" "cloudtrail_logs_bucket_public" {
   bucket = "my-cloudtrail-logs-bucket-09987643" # replace with the name of your S3 bucket
   acl    = "public-read"                        # setting the bucket ACL to public-read makes the bucket contents public
 
@@ -20,7 +20,7 @@ resource "aws_cloudtrail" "cloudtrail_public" {
   enable_logging                = true
 }
 ########## creating a PRIVATE bucket for cloudtrail ##########
-resource "aws_s3_bucket" "cloudtrail_logs_bucket" {
+resource "aws_s3_bucket" "cloudtrail_logs_bucket_private" {
   bucket = "my-cloudtrail-logs-bucket-0987654" # replace with the name of your S3 bucket
   acl    = "private"
 
