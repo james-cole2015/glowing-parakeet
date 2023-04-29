@@ -14,7 +14,7 @@ resource "aws_s3_bucket" "cloudtrail_logs_bucket_public" {
 
 resource "aws_cloudtrail" "cloudtrail_public" {
   name                          = "public_cloudtrail"
-  s3_bucket_name                = aws_s3_bucket.cloudtrail_logs_bucket_public
+  s3_bucket_name                = aws_s3_bucket.cloudtrail_logs_bucket_public.id
   include_global_service_events = true
   is_multi_region_trail         = true
   enable_logging                = true
